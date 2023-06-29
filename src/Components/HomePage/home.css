@@ -1,0 +1,10 @@
+/* .homeImage {
+  width: 100%;
+  z-index: -1;
+  margin-bottom: -250px;
+  mask-image: linear-gradient(to bottom, rgb(0, 0, 0, 1), rgb(0, 0, 0, 0));
+} */
+.homeRow {
+  display: flex;
+  width: 100%;
+}

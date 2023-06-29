@@ -1,0 +1,5 @@
+.homeImage {
+  z-index: -1;
+  margin-bottom: -200px;
+  mask-image: linear-gradient(to bottom, rgb(0, 0, 0, 1), rgb(0, 0, 0, 0));
+}

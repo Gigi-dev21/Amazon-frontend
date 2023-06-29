@@ -1,0 +1,44 @@
+body {
+  background-color: #f3f3f3;
+}
+.checkout {
+  background-color: rgb(204, 235, 241);
+  margin-top: 50px;
+  margin: auto;
+  width: 50%;
+  margin-top: 30px;
+  background-image: linear-gradient(
+    to right,
+    rgb(199, 240, 243),
+    rgb(255, 249, 249)
+  );
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.checkoutImage {
+  margin: 10px;
+  margin-bottom: 0;
+}
+.imageDesc {
+  padding-top: 40px;
+}
+.imagebutton {
+  padding-top: 40px;
+}
+
+.checkoutUpdate {
+  background-color: white;
+  padding: 20px;
+  width: 70%;
+  padding-top: 30px;
+  margin-left: 20px;
+}
+
+.checkoutSubtotal {
+  display: flex;
+  margin-top: 40px;
+  /* width: 50%; */
+  justify-content: space-between;
+  width: 99%;
+}
