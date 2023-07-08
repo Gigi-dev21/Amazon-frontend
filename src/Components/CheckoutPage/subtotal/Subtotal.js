@@ -2,9 +2,12 @@ import React from "react";
 import "./subtotal.css";
 import Currencyformat from "react-currency-format";
 import { useStateValue } from "../stateprovider/Stateprovider";
+import { useNavigate, Link } from "react-router-dom";
 
 function Subtotal() {
   const [{ basket, user }, disPatch] = useStateValue();
+  const history = useNavigate();
+
   const getBasketTotal = (basket) =>
     basket?.reduce((amount, item) => item.price + amount, 0);
 
@@ -28,7 +31,15 @@ function Subtotal() {
         thousandSeparator={true}
         prefix={"$"}
       />
-      <button className="subtotalButton">Procced to Checkout</button>
+      {/* <button className="subtotalButton" onClick={(e) => history("/payment")}>
+        Procced to Checkout
+      </button> */}
+      <Link
+        to={basket && user ? "/payment" : "/Lader"}
+        onClick={(e) => history("/payment")}
+      >
+        <button className="subtotalButton"> Proceed to Checkout</button>
+      </Link>
     </div>
   );
 }

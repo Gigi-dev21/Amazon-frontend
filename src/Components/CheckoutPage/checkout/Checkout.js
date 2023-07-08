@@ -15,6 +15,7 @@ function Checkout() {
     } else return (emptyDesc = " Your shopping cart ");
   };
   console.log(basket.length);
+
   return (
     <div>
       <div>
@@ -44,10 +45,17 @@ function Checkout() {
 
         {/* ///// */}
         <div className="checkoutSubtotal">
-          <div className="checkoutUpdate">
+          <div
+            className="checkoutUpdate"
+            style={
+              {
+                // width: "50%",
+              }
+            }
+          >
             <p
               style={{
-                fontSize: "30px",
+                fontSize: "2rem",
                 paddingBottom: "10px",
               }}
             >

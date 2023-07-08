@@ -59,9 +59,18 @@ import SearchIcon from "@mui/icons-material/Search";
 import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
 import { Link } from "react-router-dom";
 import { useStateValue } from "../CheckoutPage/stateprovider/Stateprovider";
+import { auth } from "../../firebase";
 
 function Header() {
   const [{ basket, user }, disPatch, emails] = useStateValue();
+  const handleAuthentication = () => {
+    if (user) {
+      auth.signOut();
+    }
+  };
+
+  console.log(user?.email);
+
   return (
     <div className="header ">
       <Link to="/">
@@ -75,21 +84,32 @@ function Header() {
         <SearchIcon className="header_searchIcon" />
       </div>
       <div className="header_nav">
-        <Link to="/login" className="header_option">
+        {/* <Link to="/login" className="header_option">
           <span className="header_optionLineOne">Hello{emails}</span>
           <span className="header_optionLineTwo">sign In</span>
+        </Link> */}
+
+        <Link to={!user && "/Login"} className="header_clearLink">
+          <div onClick={handleAuthentication} className="header_option">
+            <span className="header_optionLineOne">
+              Hello, {!user ? "Guest" : user?.email}
+            </span>
+            <span className="header_optionLineTwo">
+              {user ? "Sign Out" : "Sign in"}
+            </span>
+          </div>
         </Link>
 
-        <div className="header_option">
+        <Link to="/orders" className="header_option header_clearLink ">
           <span className="header_optionLineOne">Return</span>
           <span className="header_optionLineTwo">& orders</span>
-        </div>
+        </Link>
 
-        <div className="header_option">
+        <Link className="header_option header_clearLink">
           <span className="header_optionLineOne">your</span>
           <span className="header_optionLineTwo">prime</span>
-        </div>
-        <Link to="/checkout">
+        </Link>
+        <Link to="/checkout ">
           <div className="header_optionBasket">
             <ShoppingBasketIcon />
 

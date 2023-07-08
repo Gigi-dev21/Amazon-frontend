@@ -1,0 +1,12 @@
+.lader {
+  margin-top: 50px;
+  text-align: center;
+  /* color: rgb(82, 39, 39); */
+}
+.lader > body {
+  background-color: rgb(154, 141, 121);
+}
+.desc {
+  color: rgb(206, 0, 0);
+  font-size: 20px;
+}

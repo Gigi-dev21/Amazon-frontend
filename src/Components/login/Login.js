@@ -7,6 +7,7 @@ import {
   createUserWithEmailAndPassword,
 } from "firebase/auth";
 import Header from "../Header/Header";
+import Payment from "../../payments/Payment";
 
 const Login = () => {
   const [email, setEmail] = useState("");

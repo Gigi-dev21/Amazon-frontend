@@ -3,7 +3,7 @@ import "./checkoutProduct.css";
 import { Rating } from "@mui/material";
 import { useStateValue } from "../../stateprovider/Stateprovider";
 
-function CheckoutProducts({ id, title, image, price, rating }) {
+function CheckoutProducts({ id, title, image, price, rating, hiddenButton }) {
   const [{ basket, user }, disPatch] = useStateValue();
   const removeFromBasket = () => {
     disPatch({
@@ -28,9 +28,11 @@ function CheckoutProducts({ id, title, image, price, rating }) {
               <p>⭐️</p>
             ))}
         </div>
-        <button className="removeButton" onClick={removeFromBasket}>
-          Remove from basket
-        </button>
+        {!hiddenButton && (
+          <button className="removeButton" onClick={removeFromBasket}>
+            Remove from basket
+          </button>
+        )}
       </div>
     </div>
   );
