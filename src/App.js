@@ -15,6 +15,7 @@ import { auth } from "./firebase";
 import { useEffect } from "react";
 import { useStateValue } from "./Components/CheckoutPage/stateprovider/Stateprovider";
 import Lader from "./Components/CheckoutPage/subtotal/Lader";
+
 const promise = loadStripe(
   " pk_test_51NQbzkHV2kAtNdH4K13tX0neFtmDp2l5CCOqDBpQl8qcd7PVa5TNWZ7Zg5MAXekDS8F7x5p7zdp9WnKuYiijelsi00GyZXqz2R"
 );
