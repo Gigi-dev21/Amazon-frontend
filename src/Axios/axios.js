@@ -1,6 +1,6 @@
 import axios from "axios";
 
 const instance = axios.create({
-  baseURL: "https://us-central1-frontend-2f1bf.cloudfunctions.net/api",
+  baseURL:  process.env.REACT_APP_FIREBASE_API_KEY;
 });
 export default instance;
